@@ -75,7 +75,7 @@ public class MediaControlFragment extends Fragment {
 
     public void setMediaName(String mediaName) {
         Name.setText(mediaName);
-    }
+    }   
 
     public void setMediaTime(int currentTime, int maxTime) {
         // Display time in format : 00:00 / 20:00
@@ -95,6 +95,7 @@ public class MediaControlFragment extends Fragment {
                 PlayButton.setImageResource(android.R.drawable.ic_media_pause);
                 CurrentValidAction = MediaAction.Pause;
                 playbackService.start();
+                setMediaName(playbackService.getTrackName());
                 setMediaTime(playbackService.getCurrentPosition()/1000,playbackService.getDuration()/1000);
                 break;
             case Pause:
