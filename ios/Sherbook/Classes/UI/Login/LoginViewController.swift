@@ -35,7 +35,7 @@ class LoginViewController: BaseViewController
 extension LoginViewController: LoginViewDelegate
 {
     func didTapLoginButton(username: String, password: String) {
-        loginController.login(username: username, password: password) { [weak self] (token, error) in
+        loginController.login(username: username, password: password) { [weak self] (user, error) in
             if error != nil {
                 let alertController = UIAlertController(title: "", message: "An error occured", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

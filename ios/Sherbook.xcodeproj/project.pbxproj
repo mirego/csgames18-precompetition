@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80BA41DC7F6691FD3C2C5A95 /* Pods_Sherbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FD54742CEA39CB5DCBC05B /* Pods_Sherbook.framework */; };
+		85C5AC131F929CED00671060 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C5AC121F929CED00671060 /* User.swift */; };
 		8E33D6B11F92984F00BAC4F0 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E33D6761F92984F00BAC4F0 /* Stylesheet.swift */; };
 		8E33D6B21F92984F00BAC4F0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E33D6781F92984F00BAC4F0 /* HomeView.swift */; };
 		8E33D6B31F92984F00BAC4F0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E33D6791F92984F00BAC4F0 /* HomeViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		09FD54742CEA39CB5DCBC05B /* Pods_Sherbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB8D8A7895A3361D095E195 /* Pods-Sherbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherbook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherbook/Pods-Sherbook.release.xcconfig"; sourceTree = "<group>"; };
+		85C5AC121F929CED00671060 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E33D6761F92984F00BAC4F0 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		8E33D6781F92984F00BAC4F0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8E33D6791F92984F00BAC4F0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				8E33D6A71F92984F00BAC4F0 /* Attachment.swift */,
 				8E33D6A81F92984F00BAC4F0 /* Post.swift */,
 				8E33D6A91F92984F00BAC4F0 /* Feed.swift */,
+				85C5AC121F929CED00671060 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				8E33D6CA1F92984F00BAC4F0 /* HomeControllerImpl.swift in Sources */,
 				8E33D6C11F92984F00BAC4F0 /* ContinueButton.swift in Sources */,
 				8E33D6D21F92984F00BAC4F0 /* FeedService.swift in Sources */,
+				85C5AC131F929CED00671060 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,6 @@
 import Foundation
 
 protocol LoginController {
-    func login(username: String, password: String, completion: @escaping (_ token: String, _ error: Error?) -> ())
+    func login(username: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> ())
     func register(username: String, password: String, completion: @escaping (_ error: Error?) -> ())
 }

@@ -10,13 +10,15 @@ import Foundation
 
 class LoginControllerImpl : LoginController
 {
-    func login(username: String, password: String, completion: @escaping (_ token: String, _ error: Error?) -> ()) {
-        // post to server
-        completion("aaaaaaaaaaaaa", nil)
+    func login(username: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> ()) {
+        FeedService.login(username: username, password: password) { [weak self] (user, error) in
+            completion(user, error)
+        }
     }
     
     func register(username: String, password: String, completion: @escaping (_ error: Error?) -> ()) {
-        // post to server
-        completion(nil);
+        FeedService.register(username: username, password: password) { [weak self] (error) in
+            completion(error)
+        }
     }
 }

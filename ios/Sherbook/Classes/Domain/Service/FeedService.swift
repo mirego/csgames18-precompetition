@@ -12,7 +12,9 @@ class FeedService {
     private static var dev = "http://localhost:3000/"
     private static var prod = "http://130.211.216.25:3000/"
     private static let postsUrl = prod + "api/posts/"
+    private static let userURL = prod + "api/users/"
     private static let createEP = "create"
+    private static let loginUrl = prod + "api/login"
     
 
     static func getPosts(completion: @escaping (_ posts: [Post]?, _ error: Error?) -> ()) {
@@ -45,6 +47,35 @@ class FeedService {
                 print("Error trying to convert data to JSON : \(NSString(data: data, encoding: String.Encoding.utf8.rawValue))")
                 completion(nil, NSError(domain: "FeedService", code: -1, userInfo: ["description" : "Invalid data : \(data)"]))
             }
+        }
+    }
+    
+    static func login(username: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> ()) {
+        let data = "username="+username+"&password="+password
+        HttpService.post(url: loginUrl, data: data) { (data, error) in
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+            // decode data
+            do {
+                let user = try JSONDecoder().decode(User.self, from: data)
+                completion(user, error)
+            } catch {
+                print("Error trying to convert data to JSON : \(NSString(data: data, encoding: String.Encoding.utf8.rawValue))")
+                completion(nil, NSError(domain: "FeedService", code: -1, userInfo: ["description" : "Invalid data : \(data)"]))
+            }
+        }
+    }
+    
+    static func register(username: String, password: String, completion: @escaping (_ error: Error?) -> ()) {
+        let data = "username="+username+"&password="+password
+        HttpService.post(url: userURL, data: data) { (data, error) in
+            guard let data = data else {
+                completion(error)
+                return
+            }
+            completion(nil)
         }
     }
 }
