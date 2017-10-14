@@ -56,6 +56,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             holder.ivPhoto.setVisibility(postViewData.imageUrl() != null ? View.VISIBLE : View.GONE);
 
             holder.podcastHolder.setVisibility(postViewData.IsAudio() ? View.VISIBLE : View.GONE);
+            holder.SetDuration(122);
+            holder.SetTitle("Some Good Podcast : S01E04");
+
         }
     }
 
@@ -89,6 +92,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         @BindView(R.id.podcast_view)
         FrameLayout podcastHolder;
 
+        @BindView(R.id.text_podcast_view)
+        TextView tvPodcastViewName;
+
+        @BindView(R.id.text_podcast_duration)
+        TextView tvPodcastViewDuration;
+
         public PostViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -102,6 +111,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                             Toast.LENGTH_LONG).show();
                 }
             });
+        }
+
+        public void SetDuration(int duration){
+            tvPodcastViewDuration.setText(String.format("%02d:%02d", duration / 60, duration % 60));
+        }
+
+        public void SetTitle(String title){
+            tvPodcastViewName.setText(title);
         }
 
     }
