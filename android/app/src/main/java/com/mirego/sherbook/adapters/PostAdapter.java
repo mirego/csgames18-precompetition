@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.mirego.sherbook.R;
+import com.mirego.sherbook.services.PlaybackService;
 import com.mirego.sherbook.viewdatas.PostViewData;
+import com.mirego.sherbook.views.MainActivity;
 import com.mirego.sherbook.views.PodcastPostFragment;
 import com.mirego.sherbook.views.PodcastView;
 
@@ -55,9 +57,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             Glide.with(context).load(postViewData.imageUrl()).into(holder.ivPhoto);
             holder.ivPhoto.setVisibility(postViewData.imageUrl() != null ? View.VISIBLE : View.GONE);
 
-            holder.podcastHolder.setVisibility(postViewData.IsAudio() ? View.VISIBLE : View.GONE);
-            holder.SetDuration(122);
-            holder.SetTitle("Some Good Podcast : S01E04");
+
+            PlaybackService playbackService = ((MainActivity)context).playbackService;
+
+            if (playbackService != null)
+            {
+                holder.podcastHolder.setVisibility(postViewData.IsAudio() ? View.VISIBLE : View.GONE);
+                holder.SetDuration(playbackService.getDuration());
+                holder.SetTitle("Somthing something");
+            }
 
         }
     }
@@ -114,7 +122,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         }
 
         public void SetDuration(int duration){
-            tvPodcastViewDuration.setText(String.format("%02d:%02d", duration / 60, duration % 60));
+            tvPodcastViewDuration.setText(String.format("%02d:%02d", duration / 60000, duration % 60000));
         }
 
         public void SetTitle(String title){

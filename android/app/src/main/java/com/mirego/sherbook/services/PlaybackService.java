@@ -18,6 +18,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
+import com.mirego.sherbook.R;
+
 import java.io.IOException;
 
 public class PlaybackService extends Service implements OnCompletionListener {
@@ -26,16 +28,16 @@ public class PlaybackService extends Service implements OnCompletionListener {
 
     @Override
     public void onCreate() {
-        player = new MediaPlayer();
-        player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        player = MediaPlayer.create(this, R.raw.song);
+       // player.setAudioStreamType(AudioManager.STREAM_MUSIC);
         player.setOnCompletionListener(this);
-        try {
+       /* try {
             //player.setDataSource(android.os.Environment.getExternalStorageDirectory().getPath() + "/song.mp3");
-            player.setDataSource("/storage/86EE-1308/song.mp3");
-            player.prepare();
+           // player.setDataSource("/storage/86EE-1308/song.mp3");
+            //player.prepare();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @Override
