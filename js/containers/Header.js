@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import NavMenu from './NavMenu';
 
 export default class Header extends React.Component {
   render() {

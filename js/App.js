@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Header from './Header';
-import Content from './Content';
-import Feed from './Feed';
-import NavMenu from './NavMenu';
+import Header from './containers/Header';
+import Content from './containers/Content';
+import Feed from './components/Feed';
+import NavMenu from './components/NavMenu';
 
 export default class App extends React.Component {
   render() {
