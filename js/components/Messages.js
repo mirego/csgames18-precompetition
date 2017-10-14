@@ -8,24 +8,41 @@ export default class Messages extends React.Component {
     this.state = {
       groupedMessages: [
         {
+          key: "ALSKJDASD79",
           author: "Johnson",
           messages: [
-            "Allo"
-          ]
-        }, {
-          author: "Arnold",
-          messages: [
-            "Sup",
-            "How you been?"
+            {
+              senderName: "Johnson",
+              message: "Allo"
+            },
+            {
+              senderName: "You",
+              message: "Yo"
+            }
           ]
         },
+        {
+          key: "ALSKJDASD78",
+          author: "Arnold",
+          messages: [
+            {
+              senderName: "Arnold",
+              message: "Sup"
+            }, {
+              senderName: "You",
+              message: "How you been?"
+            }
+          ]
+        }
       ]
     };
   }
 
-  _renderMessages = ({ item }) => (
-    <ConvoListItem author={item.author} messages={item.messages} />
-  );
+  _renderMessages = ({ item }) => {
+    return (
+      <ConvoListItem author={item.author} messages={item.messages} />
+    );
+  };
 
   render() {
     return (
