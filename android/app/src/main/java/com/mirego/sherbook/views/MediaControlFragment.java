@@ -1,7 +1,5 @@
 package com.mirego.sherbook.views;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -30,7 +28,6 @@ public class MediaControlFragment extends Fragment {
     }
 
     MediaAction CurrentValidAction = MediaAction.Play;
-
 
     @BindView(R.id.media_control_seekbar)
     SeekBar seekBar;
@@ -61,7 +58,19 @@ public class MediaControlFragment extends Fragment {
     }
 
     public void onStopTrackingTouch(SeekBar seekBar) {
-        //Progress is progressChangedValue;
+        seekBar.setProgress(progressChangedValue);
+    }
+
+    public void setSeekBarProgress(int progressPercent){
+        seekBar.setProgress(progressPercent);
+    }
+
+    public void setMediaName(String mediaName) {
+        Name.setText(mediaName);
+    }
+
+    public void setMediaTime(int currentTime, int maxTime) {
+        Time.setText(String.format("%d:%d / %d:%d", currentTime/60,currentTime%60,maxTime/60,maxTime%60));
     }
 
     @OnClick(R.id.media_control_play)
