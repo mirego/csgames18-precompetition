@@ -36,6 +36,7 @@ class TabBarViewController: UIViewController {
     init(tabsViewControllers: [UIViewController], user: User) {
         self.tabsViewControllers = tabsViewControllers
         self.user = user
+        HttpService.token = user.token
         super.init(nibName: nil, bundle: nil)
     }
 
