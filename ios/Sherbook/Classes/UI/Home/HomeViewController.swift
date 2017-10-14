@@ -32,6 +32,12 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // start the refresh timer to update the posts
+        Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+    }
+
+    // fetchs the posts from the server
+    @objc func update() {
         homeController.getPosts { [weak self] (posts, error) in
             if let posts = posts {
                 self?.mainView.configure(postViewModels: posts)
