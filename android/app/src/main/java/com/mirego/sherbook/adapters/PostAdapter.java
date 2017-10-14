@@ -83,6 +83,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         @BindView(R.id.iv_photo)
         ImageView ivPhoto;
 
+        @BindView(R.id.image_podcast_play)
+        ImageView playButton;
+
         @BindView(R.id.podcast_view)
         FrameLayout podcastHolder;
 
@@ -90,7 +93,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             super(itemView);
             ButterKnife.bind(this, itemView);
 
-            ivPhoto.setOnClickListener(new View.OnClickListener() {
+            playButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // This is the place we will be able to start the audio player UI
