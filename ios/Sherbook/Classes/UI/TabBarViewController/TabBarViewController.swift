@@ -89,8 +89,21 @@ class TabBarViewController: UIViewController {
 extension TabBarViewController: TabBarViewDelegate {
     func didTapPostButton() {
         let alertController = UIAlertController(title: "", message: "Not implemented", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alertController.addTextField { (textField) in
+            textField.text = "Some default text"
+        }
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alertController] (_) in
+            let textField = alertController?.textFields![0]
+            print("Text field: \(String(describing: textField?.text))") // va avoir un optional("") autour mais on s'en fou
+            FeedService.composePost(text: textField!.text!, author: "pgirard", completion: { (response, error) in
+                guard let response = response else {
+                    return
+                }
+                print("reponse : \(response), Error : \(error)")
+            })
+        }))
         present(alertController, animated: true, completion: nil)
+    
     }
 
     func didSelectTab(atIndex index: Int) {
