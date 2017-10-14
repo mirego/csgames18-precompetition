@@ -7,10 +7,12 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Service;
 import android.content.pm.PackageManager;
+import android.media.MediaMetadataRetriever;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
@@ -18,24 +20,29 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
+import com.mirego.sherbook.R;
+
 import java.io.IOException;
 
 public class PlaybackService extends Service implements OnCompletionListener {
     private MediaPlayer player = null;
     private final IBinder mBinder = new LocalBinder();
 
+    private Uri dataSource =  Uri.parse("android.resource://com.mirego.sherbook/" + R.raw.song);
+
     @Override
     public void onCreate() {
-        player = new MediaPlayer();
-        player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+        player = MediaPlayer.create(this, R.raw.song);
+       // player.setAudioStreamType(AudioManager.STREAM_MUSIC);
         player.setOnCompletionListener(this);
-        try {
+       /* try {
             //player.setDataSource(android.os.Environment.getExternalStorageDirectory().getPath() + "/song.mp3");
-            player.setDataSource("/storage/86EE-1308/song.mp3");
-            player.prepare();
+           // player.setDataSource("/storage/86EE-1308/song.mp3");
+            //player.prepare();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @Override
@@ -84,8 +91,10 @@ public class PlaybackService extends Service implements OnCompletionListener {
         player.seekTo(ms);
     }
 
-    public MediaPlayer.TrackInfo[] getTrackInfo() {
-        return player.getTrackInfo();
+    public String getTrackName() {
+        MediaMetadataRetriever metadataRetriever = new MediaMetadataRetriever();
+        metadataRetriever.setDataSource(getApplicationContext(),dataSource);
+        return metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
     }
 
     @Nullable
