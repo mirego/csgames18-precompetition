@@ -1,0 +1,61 @@
+<LinearLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_root"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.mirego.sherbook.views.MediaControlFragment">
+
+    <SeekBar
+        android:id="@+id/media_control_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/media_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/media_control_play"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            app:srcCompat="@android:drawable/ic_media_play" />
+
+        <LinearLayout
+            android:id="@+id/media_control_middle_section"
+            android:layout_width="245dp"
+            android:layout_height="60dp"
+            android:layout_weight="1.17"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/media_control_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/media_control_time"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:ems="10"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/media_control_image"
+            android:layout_width="65dp"
+            android:layout_height="61dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+    </LinearLayout>
+
+</LinearLayout>

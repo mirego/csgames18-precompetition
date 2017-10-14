@@ -89,6 +89,8 @@ public class HomeFragment extends Fragment {
                 }
 
                 fabNewPost.setEnabled(true);
+
+                
             }
 
             @Override
