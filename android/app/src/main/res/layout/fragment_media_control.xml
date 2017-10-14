@@ -34,20 +34,22 @@
             android:layout_weight="1.17"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/media_control_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+            <TextView
+            android:id="@+id/media_control_name"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:textAlignment="center"
+            android:ems="10"
+            android:text="Name" />
 
-            <EditText
+            <TextView
                 android:id="@+id/media_control_time"
                 android:layout_width="match_parent"
-                android:layout_height="28dp"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
                 android:ems="10"
-                android:inputType="number" />
+                android:text=" 00:00 / 20:00" />
+
         </LinearLayout>
 
         <ImageView
