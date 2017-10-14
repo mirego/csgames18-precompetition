@@ -1,8 +1,11 @@
 package com.mirego.sherbook.viewdatas;
 
 import android.content.Context;
+import android.provider.Settings;
 
 import com.mirego.sherbook.models.Post;
+
+import static com.mirego.sherbook.models.Post.SOUND_FILE_TYPE;
 
 public class PostViewData {
 
@@ -29,5 +32,11 @@ public class PostViewData {
             }
         }
         return null;
+    }
+
+    public boolean IsAudio() {
+        System.out.println("Get attachement = " + (post.getAttachment() != null));
+        System.out.println("Value of is audio is " + (post.getAttachment() != null && post.getAttachment().getType().contains(SOUND_FILE_TYPE)) + " for post " + post.getAuthor());
+        return post.getAttachment() != null && post.getAttachment().getType().contains(SOUND_FILE_TYPE);
     }
 }

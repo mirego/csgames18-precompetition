@@ -1,16 +1,22 @@
 package com.mirego.sherbook.adapters;
 
 import android.content.Context;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.mirego.sherbook.R;
 import com.mirego.sherbook.viewdatas.PostViewData;
+import com.mirego.sherbook.views.PodcastPostFragment;
+import com.mirego.sherbook.views.PodcastView;
 
 import java.util.List;
 
@@ -48,6 +54,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
             Glide.with(context).load(postViewData.imageUrl()).into(holder.ivPhoto);
             holder.ivPhoto.setVisibility(postViewData.imageUrl() != null ? View.VISIBLE : View.GONE);
+
+            holder.podcastHolder.setVisibility(postViewData.IsAudio() ? View.VISIBLE : View.GONE);
         }
     }
 
@@ -75,9 +83,22 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         @BindView(R.id.iv_photo)
         ImageView ivPhoto;
 
+        @BindView(R.id.podcast_view)
+        FrameLayout podcastHolder;
+
         public PostViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
+            ivPhoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // This is the place we will be able to start the audio player UI
+                    Toast.makeText(v.getContext(),
+                            "I will start audio playing here",
+                            Toast.LENGTH_LONG).show();
+                }
+            });
         }
 
     }

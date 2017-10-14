@@ -4,7 +4,10 @@ import java.util.Date;
 
 public class Post {
 
+    public static String SOUND_FILE_TYPE = "SOUND_TYPE";
+
     public class Attachment {
+
         private String type;
         private String url;
 
@@ -22,6 +25,9 @@ public class Post {
 
         public void setUrl(String url) {
             this.url = url;
+        }
+
+        public Attachment(){
         }
 
     }

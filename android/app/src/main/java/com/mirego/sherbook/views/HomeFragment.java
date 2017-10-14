@@ -16,8 +16,10 @@ import com.mirego.sherbook.R;
 import com.mirego.sherbook.SherbookApplication;
 import com.mirego.sherbook.adapters.PostAdapter;
 import com.mirego.sherbook.controllers.FeedController;
+import com.mirego.sherbook.models.Post;
 import com.mirego.sherbook.viewdatas.PostViewData;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -81,6 +83,8 @@ public class HomeFragment extends Fragment {
             public void onSuccess(List<PostViewData> result) {
                 boolean hasPosts = result != null && result.size() != 0;
 
+                if (hasPosts) result.add(getCustomPostViewData());
+
                 rvPosts.setVisibility(hasPosts ? View.VISIBLE : View.GONE);
                 tvNoPosts.setVisibility(!hasPosts ? View.VISIBLE : View.GONE);
 
@@ -109,6 +113,26 @@ public class HomeFragment extends Fragment {
         });
 
         fabNewPost.setEnabled(false);
+    }
+
+    public PostViewData getCustomPostViewData() {
+
+        Post post = new Post();
+
+        post.setAuthor("Some person who podcasts");
+        post.setDate(new Date());
+        post.setMessage("Hey, I podcast stuff, please listen to my podcast for fun. Please like, share and maybe follow? :)");
+        post.setId("489557-283729");
+
+
+        Post.Attachment attachment = post.new Attachment();
+
+        attachment.setType(Post.SOUND_FILE_TYPE);
+        //attachment.setUrl("SOMTHING");
+        post.setAttachment(attachment);
+        PostViewData postViewData = new PostViewData(post, getActivity());
+
+        return postViewData;
     }
 
     @OnClick(R.id.fab_new_post)
