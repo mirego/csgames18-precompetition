@@ -5,6 +5,9 @@ import Swiper from 'react-native-swiper';
 import Header from './containers/Header';
 import Content from './containers/Content';
 import NavMenu from './containers/NavMenu';
+import Messages from './components/Messages';
+import Contacts from './components/Contacts';
+import Settings from './components/Settings';
 import Feed from './components/Feed';
 
 const PAGES = [
@@ -13,10 +16,6 @@ const PAGES = [
   'Messages',
   'Settings'
 ]
-
-import Messages from './components/Messages';
-import Contacts from './components/Contacts';
-import Settings from './components/Settings';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -55,7 +54,7 @@ export default class App extends React.Component {
           />
         </Header>
         <Content>
-          <Swiper index={this.props.currentPageIndex} ref={(_swiper) => { this._swiper = _swiper; }} onIndexChanged={(index) => this.setCurrentPage(index)} loop={true} showsPagination={false}>
+          <Swiper index={this.props.currentPageIndex} ref={(_swiper) => { this._swiper = _swiper; }} onIndexChanged={(index) => this.setCurrentPage(index)} loop={false} showsPagination={false}>
             <Feed />
             <Contacts />
             <Messages />
