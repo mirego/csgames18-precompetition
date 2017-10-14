@@ -1,4 +1,4 @@
 {"date":"2017-10-14T18:16:00.424Z","author":"pgirard","message":",ICH,IIE","attachment":null,"_id":"0LG5woaldZ1o8iHQ"}
 {"date":"2017-10-14T18:09:59.320Z","author":"pgirard","message":"Some default text","attachment":null,"_id":"8iOSrZekP3R85oda"}
 {"date":"2017-10-14T16:18:19.148Z","author":"pgirard","message":"Some default text","attachment":null,"_id":"QiWDXhr0Ir1rJa85"}
-{"date":"2017-10-14T20:16:06.758Z","author":"test1","message":"this is a test","attachment":{"url":"http://www.perdu.com","type":"website"},"_id":"ip66JXosYnKdzcvh"}
+{"date":"2017-10-14T20:16:06.758Z","author":"test1","message":"this is a test","attachment":{"url":"https://s3.amazonaws.com/shared.ws.mirego.com/competition/images/19225167_1944400129183097_741905922742649424_n.jpg","type":"image"},"_id":"ip66JXosYnKdzcvh"}
