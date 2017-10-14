@@ -29,7 +29,7 @@ exports.getById = function (req, res) {
 exports.register = function (req, res) {
   if (req.body.username && req.body.password) {
     let user = {
-      'username': req.body.username,
+      'username': req.body.username.toLowerCase(),
       'password': bcrypt.hashSync(req.body.password, 8),
       'url': req.body.url || ''
     };
