@@ -29,9 +29,10 @@ public class Post {
     private String id;
     private Date date;
     private String author;
+    private String faculty;
     private String message;
     private Attachment attachment;
-
+    private int likes;
     public String getId() {
         return id;
     }
@@ -56,12 +57,28 @@ public class Post {
         this.author = author;
     }
 
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
     public String getMessage() {
         return message;
     }
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
     public Attachment getAttachment() {
@@ -71,5 +88,7 @@ public class Post {
     public void setAttachment(Attachment attachment) {
         this.attachment = attachment;
     }
+
+
 
 }

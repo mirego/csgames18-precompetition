@@ -4,7 +4,9 @@ import android.content.Context;
 
 import com.mirego.sherbook.models.Feed;
 import com.mirego.sherbook.models.Post;
+import com.mirego.sherbook.models.Faculty;
 import com.mirego.sherbook.services.FeedService;
+import com.mirego.sherbook.viewdatas.FacultyViewData;
 import com.mirego.sherbook.viewdatas.PostViewData;
 
 import java.util.ArrayList;
@@ -48,6 +50,29 @@ public class FeedController {
             @Override
             public void onFailure(Call<Feed> call, Throwable t) {
                 postsRequestCallback.onError();
+            }
+        });
+    }
+
+    public void getFaculties(final RequestCallback<List<FacultyViewData>> facultyRequestCallback) {
+        feedService.getFeed().enqueue(new Callback<Feed>() {
+            @Override
+            public void onResponse(Call<Feed> call, Response<Feed> response) {
+                Feed feed = response.body();
+                if (feed != null) {
+                    List<FacultyViewData> facultyViewDatas = new ArrayList<>();
+                    for (Faculty fac : feed.getFaculties()) {
+                        facultyViewDatas.add(new FacultyViewData(fac, context));
+                    }
+                    facultyRequestCallback.onSuccess(facultyViewDatas);
+                } else {
+                    facultyRequestCallback.onError();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Feed> call, Throwable t) {
+                facultyRequestCallback.onError();
             }
         });
     }

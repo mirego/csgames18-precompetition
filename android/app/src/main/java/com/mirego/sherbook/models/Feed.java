@@ -7,6 +7,7 @@ public class Feed {
     private String feed;
     private Date lastUpdate;
     private List<Post> posts = null;
+    private List<Faculty> faculties = null;
 
     public String getFeed() {
         return feed;
@@ -28,7 +29,9 @@ public class Feed {
         return posts;
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
-    }
+    public void setPosts(List<Post> posts) {this.posts = posts;}
+
+    public List<Faculty> getFaculties() {return faculties;}
+
+    public void setFaculties(List<Faculty> faculties) {this.faculties = faculties;}
 }
