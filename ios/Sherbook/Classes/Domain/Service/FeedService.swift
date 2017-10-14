@@ -33,7 +33,7 @@ class FeedService {
         }
     }
     
-    static func composePost(text: String, author: String, completion: @escaping (_ posts: [Post]?, _ error: Error?) -> ()) {
+    static func composePost(text: String, author: String, completion: @escaping (_ posts: Post?, _ error: Error?) -> ()) {
         let data = "author="+author+"&message="+text
         HttpService.post(url: postsUrl + createEP, data: data) { (data, error) in
             guard let data = data else {
@@ -41,8 +41,8 @@ class FeedService {
                 return
             }
             do {
-                let feed = try JSONDecoder().decode(Feed.self, from: data)
-                completion(feed.posts, error)
+                let post = try JSONDecoder().decode(Post.self, from: data)
+                completion(post, error)
             } catch {
                 print("Error trying to convert data to JSON : \(NSString(data: data, encoding: String.Encoding.utf8.rawValue))")
                 completion(nil, NSError(domain: "FeedService", code: -1, userInfo: ["description" : "Invalid data : \(data)"]))
