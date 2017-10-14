@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1225F3B81F92681700286CCE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225F3B71F92681700286CCE /* SettingsView.swift */; };
+		1225F3BA1F92682500286CCE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225F3B91F92682500286CCE /* SettingsViewController.swift */; };
+		1225F3BC1F92697700286CCE /* SettingsControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225F3BB1F92697700286CCE /* SettingsControllerImpl.swift */; };
+		1225F3BE1F926A1F00286CCE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225F3BD1F926A1F00286CCE /* SettingsController.swift */; };
+		1225F3C01F9275D000286CCE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225F3BF1F9275D000286CCE /* SettingsTableViewController.swift */; };
+		1225F3C21F92920800286CCE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1225F3C11F92920800286CCE /* image.jpg */; };
+		1225F3C41F929EA100286CCE /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1225F3C31F929EA100286CCE /* image.png */; };
+		1225F3C61F92A36E00286CCE /* cloud.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1225F3C51F92A36E00286CCE /* cloud.jpg */; };
+		1225F3CD1F92AE0600286CCE /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225F3CA1F92AE0600286CCE /* FriendsController.swift */; };
+		1225F3CE1F92AE0600286CCE /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1225F3CB1F92AE0600286CCE /* MyParticle.sks */; };
+		1225F3CF1F92AE0600286CCE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225F3CC1F92AE0600286CCE /* ProfileView.swift */; };
 		80BA41DC7F6691FD3C2C5A95 /* Pods_Sherbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FD54742CEA39CB5DCBC05B /* Pods_Sherbook.framework */; };
 		F1C2592D1F91722E00575930 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2592C1F91722E00575930 /* AppDelegate.swift */; };
 		F1C2592F1F91722E00575930 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2592E1F91722E00575930 /* ViewController.swift */; };
@@ -40,6 +51,17 @@
 
 /* Begin PBXFileReference section */
 		09FD54742CEA39CB5DCBC05B /* Pods_Sherbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1225F3B71F92681700286CCE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1225F3B91F92682500286CCE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1225F3BB1F92697700286CCE /* SettingsControllerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsControllerImpl.swift; sourceTree = "<group>"; };
+		1225F3BD1F926A1F00286CCE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		1225F3BF1F9275D000286CCE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		1225F3C11F92920800286CCE /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		1225F3C31F929EA100286CCE /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = Sherbook/Classes/UI/TabBarViewController/Subviews/image.png; sourceTree = SOURCE_ROOT; };
+		1225F3C51F92A36E00286CCE /* cloud.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cloud.jpg; sourceTree = "<group>"; };
+		1225F3CA1F92AE0600286CCE /* FriendsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsController.swift; path = ../../../../../../../../Friends/FriendsController.swift; sourceTree = "<group>"; };
+		1225F3CB1F92AE0600286CCE /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MyParticle.sks; path = ../../../../../../../../Friends/MyParticle.sks; sourceTree = "<group>"; };
+		1225F3CC1F92AE0600286CCE /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = ../../../../../../../../Friends/ProfileView.swift; sourceTree = "<group>"; };
 		4FB8D8A7895A3361D095E195 /* Pods-Sherbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherbook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherbook/Pods-Sherbook.release.xcconfig"; sourceTree = "<group>"; };
 		9A7A3C23FE6221CFDE954031 /* Pods-Sherbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherbook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sherbook/Pods-Sherbook.debug.xcconfig"; sourceTree = "<group>"; };
 		F1C259291F91722E00575930 /* Sherbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sherbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +117,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1225F3B61F9267B600286CCE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1225F3B71F92681700286CCE /* SettingsView.swift */,
+				1225F3B91F92682500286CCE /* SettingsViewController.swift */,
+				1225F3BF1F9275D000286CCE /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1225F3C91F92ADF600286CCE /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				1225F3CA1F92AE0600286CCE /* FriendsController.swift */,
+				1225F3CB1F92AE0600286CCE /* MyParticle.sks */,
+				1225F3CC1F92AE0600286CCE /* ProfileView.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
 		57FB204A4971AA56BAF5F363 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +189,8 @@
 		F1C259401F9174C500575930 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1225F3C91F92ADF600286CCE /* Friends */,
+				1225F3B61F9267B600286CCE /* Settings */,
 				F1C2596B1F917FDB00575930 /* Base */,
 				F1C2594A1F91780B00575930 /* Home */,
 				F1C259661F917DD200575930 /* NotImplemented */,
@@ -197,6 +241,9 @@
 		F1C2594F1F9179D200575930 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				1225F3C51F92A36E00286CCE /* cloud.jpg */,
+				1225F3C31F929EA100286CCE /* image.png */,
+				1225F3C11F92920800286CCE /* image.jpg */,
 				F1C259501F9179D200575930 /* PostButton.swift */,
 				F1C259511F9179D200575930 /* CustomTabBarView.swift */,
 				F1C259521F9179D200575930 /* TabBarButton.swift */,
@@ -256,6 +303,7 @@
 				F1C377811F918CE500F33156 /* Impl */,
 				F1C377711F91899B00F33156 /* ViewModel */,
 				F1C3777F1F918CDF00F33156 /* HomeController.swift */,
+				1225F3BD1F926A1F00286CCE /* SettingsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				F1C377821F918D2200F33156 /* HomeControllerImpl.swift */,
+				1225F3BB1F92697700286CCE /* SettingsControllerImpl.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -366,8 +415,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1225F3C61F92A36E00286CCE /* cloud.jpg in Resources */,
+				1225F3CE1F92AE0600286CCE /* MyParticle.sks in Resources */,
 				F1C259371F91722E00575930 /* LaunchScreen.storyboard in Resources */,
 				F1C259341F91722E00575930 /* Assets.xcassets in Resources */,
+				1225F3C21F92920800286CCE /* image.jpg in Resources */,
+				1225F3C41F929EA100286CCE /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +440,7 @@
 				"${BUILT_PRODUCTS_DIR}/MCUIViewLayout/MCUIViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/MRGTaylor/MRGTaylor.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -396,6 +450,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MCUIViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRGTaylor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -443,11 +498,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C377861F9191EF00F33156 /* PostViewCell.swift in Sources */,
+				1225F3CD1F92AE0600286CCE /* FriendsController.swift in Sources */,
 				F1C2596A1F917E0100575930 /* NotImplementedView.swift in Sources */,
 				F1C377731F9189D500F33156 /* Feed.swift in Sources */,
 				F1C377791F918AD600F33156 /* FeedService.swift in Sources */,
 				F1C2595B1F917B3000575930 /* CustomTabBarView.swift in Sources */,
 				F1C377831F918D2200F33156 /* HomeControllerImpl.swift in Sources */,
+				1225F3BE1F926A1F00286CCE /* SettingsController.swift in Sources */,
 				F1C2592F1F91722E00575930 /* ViewController.swift in Sources */,
 				F1C377771F918A6B00F33156 /* Attachment.swift in Sources */,
 				F1C259631F917C7600575930 /* Time.swift in Sources */,
@@ -455,18 +512,23 @@
 				F1C2595A1F917B3000575930 /* PostButton.swift in Sources */,
 				F1C2592D1F91722E00575930 /* AppDelegate.swift in Sources */,
 				F1C259651F917C7A00575930 /* UIView+MCLayout.swift in Sources */,
+				1225F3BC1F92697700286CCE /* SettingsControllerImpl.swift in Sources */,
 				F1C3776E1F91888400F33156 /* HttpService.swift in Sources */,
 				F1C259641F917C7A00575930 /* UIControl+Closure.swift in Sources */,
+				1225F3C01F9275D000286CCE /* SettingsTableViewController.swift in Sources */,
 				F1C2595D1F917B3000575930 /* TabBarViewController.swift in Sources */,
 				F1C259441F9175D300575930 /* Stylesheet.swift in Sources */,
 				F1C2595C1F917B3000575930 /* TabBarButton.swift in Sources */,
 				F1C2594E1F9178F200575930 /* HomeView.swift in Sources */,
 				F1C3777E1F918C3400F33156 /* PostViewModelImpl.swift in Sources */,
 				F1C2596F1F91803700575930 /* BaseViewController.swift in Sources */,
+				1225F3B81F92681700286CCE /* SettingsView.swift in Sources */,
 				F1C377751F918A2900F33156 /* Post.swift in Sources */,
+				1225F3BA1F92682500286CCE /* SettingsViewController.swift in Sources */,
 				F1C377801F918CDF00F33156 /* HomeController.swift in Sources */,
 				F1C3777B1F918C0000F33156 /* PostViewModel.swift in Sources */,
 				F1C2595E1F917B3000575930 /* TabBarView.swift in Sources */,
+				1225F3CF1F92AE0600286CCE /* ProfileView.swift in Sources */,
 				F1C2594C1F91781F00575930 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,6 +661,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QV2ZVNAB36;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherbook/Classes/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -618,6 +681,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QV2ZVNAB36;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherbook/Classes/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -19,7 +19,7 @@ class HomeViewController: BaseViewController {
     init(homeController: HomeController) {
         self.homeController = homeController
         super.init(nibName: nil, bundle: nil)
-        title = "Home"
+        title = "Accueil"
     }
 
     required init(coder aDecoder: NSCoder) {

@@ -16,7 +16,7 @@ class NotImplementedView: UIView {
         super.init(frame: .zero)
         backgroundColor = .silver
 
-        label.setProperties(text: "Not Implemented", font: UIFont.systemFont(ofSize: 16, weight: .regular), textColor: .almostBlack, fit: true)
+        label.setProperties(text: "À implémenter...", font: UIFont.systemFont(ofSize: 16, weight: .regular), textColor: .almostBlack, fit: true)
         addSubview(label)
     }
 

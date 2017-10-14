@@ -16,10 +16,10 @@ class CustomTabBarView: UIView {
 
     init() {
         tabBarButtons = [
-            TabBarButton(iconName: "icnHome", label: "Home"),
-            TabBarButton(iconName: "icnFriends", label: "Friends"),
+            TabBarButton(iconName: "icnHome", label: "Accueil"),
+            TabBarButton(iconName: "icnFriends", label: "Amis"),
             TabBarButton(iconName: "icnMessages", label: "Messages"),
-            TabBarButton(iconName: "icnSettings", label: "Settings")]
+            TabBarButton(iconName: "icnSettings", label: "Réglages")]
 
         super.init(frame: .zero)
 

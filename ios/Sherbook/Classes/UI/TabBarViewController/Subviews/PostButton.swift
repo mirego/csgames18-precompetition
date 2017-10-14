@@ -28,7 +28,7 @@ class PostButton: UIButton {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) doit être implémenté")
     }
 
     override func layoutSubviews() {

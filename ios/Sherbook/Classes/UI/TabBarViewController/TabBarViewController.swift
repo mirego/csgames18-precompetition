@@ -88,10 +88,21 @@ class TabBarViewController: UIViewController {
 
 extension TabBarViewController: TabBarViewDelegate {
     func didTapPostButton() {
-        let alertController = UIAlertController(title: "", message: "Not implemented", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alertController, animated: true, completion: nil)
-    }
+        navigationController?.navigationBar.tintColor = .red
+        
+        let cloud = UIImageView(image: (UIImage(named: "cloud.jpg"))!)
+        cloud.frame = CGRect(x: 0, y: 0, width: 640, height: 1136)
+        cloud.alpha = 0.75
+        view.addSubview(cloud);
+        
+        let unicorn = UIImageView(image: (UIImage(named: "image.png"))!)
+        unicorn.frame = CGRect(x: 75, y: 300, width: 167, height: 320)
+        UIView.animate(withDuration: 6, delay: 1, options: .curveLinear, animations: {
+            unicorn.center.y -= 1000
+        }, completion: nil)
+        view.addSubview(unicorn)
+        
+        }
 
     func didSelectTab(atIndex index: Int) {
         transitionToTabIndex(index, animated: true)
