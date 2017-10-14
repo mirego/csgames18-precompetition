@@ -1,21 +1,30 @@
 package com.mirego.sherbook.views;
 
+import android.Manifest;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
 import com.mirego.sherbook.R;
 import com.mirego.sherbook.SherbookApplication;
+import com.mirego.sherbook.services.PlaybackService;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
     private List<TabDescriptor> tabData;
     private SectionsPagerAdapter sectionsPagerAdapter;
+
+    public PlaybackService playbackService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,4 +162,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Request permissions
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+
+        Intent playbackIntent = new Intent(this, PlaybackService.class);
+        startService(playbackIntent);
+        bindService(playbackIntent, mConnection, Context.BIND_AUTO_CREATE);
+    }
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            PlaybackService.LocalBinder binder = (PlaybackService.LocalBinder)service;
+            playbackService = binder.getServiceInstance();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+        }
+    };
 }
