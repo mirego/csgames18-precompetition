@@ -32,23 +32,32 @@ class LoginViewController: BaseViewController
     }
 }
 
+
 extension LoginViewController: LoginViewDelegate
 {
     func didTapLoginButton(username: String, password: String) {
         loginController.login(username: username, password: password) { [weak self] (user, error) in
+            guard let user = user else {
+                self?.alertBadLogin(self_controller: self)
+                return
+            }
             if error != nil {
-                let alertController = UIAlertController(title: "", message: "An error occured", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self?.present(alertController, animated: true, completion: nil)
+                self?.alertBadLogin(self_controller: self)
             } else {
                 let homeController = TabBarViewController(tabsViewControllers:
                     [UINavigationController(rootViewController: HomeViewController(homeController: HomeControllerImpl())),
                      UINavigationController(rootViewController: NotImplementedViewController(title: "Friends")),
                      UINavigationController(rootViewController: NotImplementedViewController(title: "Messages")),
-                     UINavigationController(rootViewController: NotImplementedViewController(title: "Settings"))])
+                     UINavigationController(rootViewController: NotImplementedViewController(title: "Settings"))], user: user)
                 self?.present(homeController, animated:true, completion:nil)
             }
         }
+    }
+    
+    func alertBadLogin(self_controller: LoginViewController?) {
+        let alertController = UIAlertController(title: "", message: "Bad Login 🛑", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self_controller?.present(alertController, animated: true, completion: nil)
     }
     
     func didTapRegisterButton(username: String, password: String) {

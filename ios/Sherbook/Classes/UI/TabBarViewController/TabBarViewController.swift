@@ -11,6 +11,7 @@ import UIKit
 class TabBarViewController: UIViewController {
 
     private let tabsViewControllers: [UIViewController]
+    private let user: User
 
     var bottomInset: CGFloat {
         return mainView.bottomInset
@@ -32,9 +33,9 @@ class TabBarViewController: UIViewController {
         return .lightContent
     }
 
-    init(tabsViewControllers: [UIViewController]) {
+    init(tabsViewControllers: [UIViewController], user: User) {
         self.tabsViewControllers = tabsViewControllers
-
+        self.user = user
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -96,7 +97,7 @@ extension TabBarViewController: TabBarViewDelegate {
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alertController] (_) in
             let textField = alertController?.textFields![0]
             print("Text field: \(String(describing: textField?.text))") // va avoir un optional("") autour mais on s'en fou
-            FeedService.composePost(text: textField!.text!, author: "pgirard", completion: { (response, error) in
+            FeedService.composePost(text: textField!.text!, author: self.user.username, completion: { (response, error) in
                 guard let response = response else {
                     return
                 }
