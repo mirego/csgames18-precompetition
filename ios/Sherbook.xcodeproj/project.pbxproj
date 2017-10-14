@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80BA41DC7F6691FD3C2C5A95 /* Pods_Sherbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FD54742CEA39CB5DCBC05B /* Pods_Sherbook.framework */; };
+		850922E01F9256B900608049 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C259541F9179D200575930 /* TabBarViewController.swift */; };
 		F1C2592D1F91722E00575930 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2592C1F91722E00575930 /* AppDelegate.swift */; };
 		F1C2592F1F91722E00575930 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2592E1F91722E00575930 /* ViewController.swift */; };
 		F1C259341F91722E00575930 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C259331F91722E00575930 /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		F1C2595A1F917B3000575930 /* PostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C259501F9179D200575930 /* PostButton.swift */; };
 		F1C2595B1F917B3000575930 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C259511F9179D200575930 /* CustomTabBarView.swift */; };
 		F1C2595C1F917B3000575930 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C259521F9179D200575930 /* TabBarButton.swift */; };
-		F1C2595D1F917B3000575930 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C259541F9179D200575930 /* TabBarViewController.swift */; };
 		F1C2595E1F917B3000575930 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C259531F9179D200575930 /* TabBarView.swift */; };
 		F1C259631F917C7600575930 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C259621F917C7200575930 /* Time.swift */; };
 		F1C259641F917C7A00575930 /* UIControl+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C259601F917C7200575930 /* UIControl+Closure.swift */; };
@@ -446,6 +446,7 @@
 				F1C2596A1F917E0100575930 /* NotImplementedView.swift in Sources */,
 				F1C377731F9189D500F33156 /* Feed.swift in Sources */,
 				F1C377791F918AD600F33156 /* FeedService.swift in Sources */,
+				850922E01F9256B900608049 /* TabBarViewController.swift in Sources */,
 				F1C2595B1F917B3000575930 /* CustomTabBarView.swift in Sources */,
 				F1C377831F918D2200F33156 /* HomeControllerImpl.swift in Sources */,
 				F1C2592F1F91722E00575930 /* ViewController.swift in Sources */,
@@ -457,7 +458,6 @@
 				F1C259651F917C7A00575930 /* UIView+MCLayout.swift in Sources */,
 				F1C3776E1F91888400F33156 /* HttpService.swift in Sources */,
 				F1C259641F917C7A00575930 /* UIControl+Closure.swift in Sources */,
-				F1C2595D1F917B3000575930 /* TabBarViewController.swift in Sources */,
 				F1C259441F9175D300575930 /* Stylesheet.swift in Sources */,
 				F1C2595C1F917B3000575930 /* TabBarButton.swift in Sources */,
 				F1C2594E1F9178F200575930 /* HomeView.swift in Sources */,
