@@ -19,7 +19,7 @@ exports.list = function(req, res) {
   let filter = {};
   let projection = {
   };
-  req.db.posts.find(filter, projection).limit(50).exec(function (e, posts) {
+  req.db.posts.find(filter, projection).sort({date: -1}).limit(50).exec(function (e, posts) {
     res.json({
       'feed': 'fdsa',
       'lastUpdate': new Date().toJSON(),

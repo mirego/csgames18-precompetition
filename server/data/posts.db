@@ -1,9 +1,4 @@
 {"date":"2017-10-14T18:16:00.424Z","author":"pgirard","message":",ICH,IIE","attachment":null,"_id":"0LG5woaldZ1o8iHQ"}
 {"date":"2017-10-14T18:09:59.320Z","author":"pgirard","message":"Some default text","attachment":null,"_id":"8iOSrZekP3R85oda"}
 {"date":"2017-10-14T16:18:19.148Z","author":"pgirard","message":"Some default text","attachment":null,"_id":"QiWDXhr0Ir1rJa85"}
-{"date":"2017-10-14T14:37:49.445Z","author":"test1","message":"this is a test","attachment":null,"_id":"WYWtc0no8qpqz4ce"}
-{"date":"2017-10-14T18:10:19.440Z","author":"pgirard","message":"AAAAAAAAAA","attachment":null,"_id":"YFJsBLb680H8iOxV"}
-{"date":"2017-10-14T14:36:14.489Z","author":"test","message":"this is a test","attachment":null,"_id":"ZL0A79unfM1wAgNP"}
-{"date":"2017-10-14T14:37:36.545Z","author":"test","message":"this is a test2","attachment":null,"_id":"jVr5rbZH2DnWcp2S"}
-{"date":"2017-10-14T18:10:08.325Z","author":"pgirard","message":"Some default text","attachment":null,"_id":"kfIHz9dleNxpdiQI"}
-{"date":"2017-10-14T16:05:00.400Z","author":"value","message":"message","attachment":null,"_id":"tqPWOOuhskwmjonj"}
+{"date":"2017-10-14T20:16:06.758Z","author":"test1","message":"this is a test","attachment":{"url":"http://www.perdu.com","type":"website"},"_id":"ip66JXosYnKdzcvh"}
