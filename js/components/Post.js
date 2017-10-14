@@ -38,19 +38,19 @@ const win = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     postContainer : {
-        marginBottom:10,
-        paddingTop: 2,
+        marginBottom:8,
+        paddingTop: 5,
         backgroundColor: 'white',
-        borderBottomColor: 'grey',
-        borderBottomWidth: 0.4
     },
     title: {
-        paddingLeft: 5,
+        paddingLeft: 10,
+        marginBottom: 5,
         fontWeight: 'bold',
         color: 'black'
     },
     message: {
-        paddingLeft: 5,
+        paddingLeft: 10,
+        paddingRight: 10,
         textAlign: 'justify',
         marginBottom: 5
     },
