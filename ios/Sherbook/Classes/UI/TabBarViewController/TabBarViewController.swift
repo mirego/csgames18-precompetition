@@ -88,9 +88,10 @@ class TabBarViewController: UIViewController {
 
 extension TabBarViewController: TabBarViewDelegate {
     func didTapPostButton() {
-        let alertController = UIAlertController(title: "", message: "Not implemented", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "", message: "Post to Sherbook 🔰", preferredStyle: .alert)
         alertController.addTextField { (textField) in
-            textField.text = "Some default text"
+            textField.text = ""
+            textField.placeholder = "Share your awesome experiences 🏄‍♀️"
         }
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alertController] (_) in
             let textField = alertController?.textFields![0]
@@ -102,6 +103,8 @@ extension TabBarViewController: TabBarViewDelegate {
                 print("reponse : \(response), Error : \(error)")
             })
         }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     
     }
