@@ -17,9 +17,14 @@ public class PostViewData {
     public String author() {
         return post.getAuthor();
     }
-
+    public String faculty() {
+        return post.getFaculty();
+    }
     public String message() {
         return post.getMessage();
+    }
+    public int likes() {
+        return post.getLikes();
     }
 
     public String imageUrl() {

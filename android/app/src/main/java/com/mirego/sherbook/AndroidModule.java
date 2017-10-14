@@ -25,7 +25,7 @@ class AndroidModule {
     @Singleton
     Retrofit provideRetrofit() {
         return new Retrofit.Builder()
-                .baseUrl("https://s3.amazonaws.com/shared.ws.mirego.com/competition/")
+                .baseUrl("https://www.dropbox.com/s/28z0wm6zaepxw3i/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }

@@ -1,5 +1,6 @@
 package com.mirego.sherbook;
 
+import com.mirego.sherbook.views.CompetitionFragment;
 import com.mirego.sherbook.views.HomeFragment;
 import com.mirego.sherbook.views.MainActivity;
 
@@ -14,5 +15,7 @@ public interface ApplicationComponent {
     void inject(MainActivity mainActivity);
 
     void inject(HomeFragment homeFragment);
+
+    void inject(CompetitionFragment competitionFragment);
 
 }
