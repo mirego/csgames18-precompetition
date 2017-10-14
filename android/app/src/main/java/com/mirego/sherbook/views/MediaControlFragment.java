@@ -70,7 +70,7 @@ public class MediaControlFragment extends Fragment {
     }
 
     public void setMediaTime(int currentTime, int maxTime) {
-        Time.setText(String.format("%d:%d / %d:%d", currentTime/60,currentTime%60,maxTime/60,maxTime%60));
+        Time.setText(String.format("%02d:%02d / %02d:%02d", currentTime/60,currentTime%60,maxTime/60,maxTime%60));
     }
 
     @OnClick(R.id.media_control_play)
