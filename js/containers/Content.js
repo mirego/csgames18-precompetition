@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default class Content extends React.Component {
   render() {
     return (
-      <View style={styles.header}>
+      <View style={styles.content}>
         {this.props.children}
       </View>
     );
@@ -12,7 +12,7 @@ export default class Content extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  header: {
+  content: {
     flex: 4,
     padding: 10,
     backgroundColor: 'steelblue'
