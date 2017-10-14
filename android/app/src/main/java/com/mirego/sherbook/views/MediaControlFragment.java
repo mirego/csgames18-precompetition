@@ -1,5 +1,7 @@
 package com.mirego.sherbook.views;
 
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -22,8 +24,17 @@ public class MediaControlFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public enum MediaAction { //Enum is overkill for current task, but expecting more functionality later
+        Play,
+        Pause,
+    }
+
+    MediaAction CurrentValidAction = MediaAction.Play;
+
+
     @BindView(R.id.media_control_seekbar)
     SeekBar seekBar;
+    int progressChangedValue = 0;
 
     @BindView(R.id.media_control_play)
     ImageButton PlayButton;
@@ -45,8 +56,28 @@ public class MediaControlFragment extends Fragment {
         return rootView;
     }
 
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        progressChangedValue = progress;
+    }
+
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        //Progress is progressChangedValue;
+    }
+
     @OnClick(R.id.media_control_play)
     public void onPlayButtonPressed(View view) {
-        Snackbar.make(view, R.string.not_implemented_yet, Snackbar.LENGTH_SHORT).show();
+        switch (CurrentValidAction)
+        {
+            case Play:
+                Snackbar.make(view, "Play", Snackbar.LENGTH_SHORT).show();
+                PlayButton.setImageResource(android.R.drawable.ic_media_pause);
+                CurrentValidAction = MediaAction.Pause;
+                break;
+            case Pause:
+                Snackbar.make(view, "Pause", Snackbar.LENGTH_SHORT).show();
+                PlayButton.setImageResource(android.R.drawable.ic_media_play);
+                CurrentValidAction = MediaAction.Play;
+                break;
+        }
     }
 }
