@@ -57,8 +57,12 @@ public class MediaControlFragment extends Fragment {
 
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         progressChangedValue = progress;
-        //int mediaTime = playbackService.getDuration() * (progress/seekBar.getMax());
-        //playbackService.seekTo(mediaTime);
+        if(playbackService == null)
+        {
+            playbackService = ((MainActivity)getActivity()).playbackService;
+        }
+        int mediaTime = playbackService.getDuration() * (progress/seekBar.getMax());
+        playbackService.seekTo(mediaTime);
     }
 
     public void onStopTrackingTouch(SeekBar seekBar) {
@@ -71,10 +75,10 @@ public class MediaControlFragment extends Fragment {
 
     public void setMediaName(String mediaName) {
         Name.setText(mediaName);
-    }
+    }   
 
     public void setMediaTime(int currentTime, int maxTime) {
-        // Display
+        // Display time in format : 00:00 / 20:00
         Time.setText(String.format("%02d:%02d / %02d:%02d", currentTime/60,currentTime%60,maxTime/60,maxTime%60));
     }
 
@@ -87,10 +91,11 @@ public class MediaControlFragment extends Fragment {
                 {
                     playbackService = ((MainActivity)getActivity()).playbackService;
                 }
-                //Snackbar.make(view, "Play", Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(view, "Play", Snackbar.LENGTH_SHORT).show(); //Debug message
                 PlayButton.setImageResource(android.R.drawable.ic_media_pause);
                 CurrentValidAction = MediaAction.Pause;
                 playbackService.start();
+                setMediaName(playbackService.getTrackName());
                 setMediaTime(playbackService.getCurrentPosition()/1000,playbackService.getDuration()/1000);
                 break;
             case Pause:
@@ -98,7 +103,7 @@ public class MediaControlFragment extends Fragment {
                 {
                     playbackService = ((MainActivity)getActivity()).playbackService;
                 }
-                //Snackbar.make(view, "Pause", Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(view, "Pause", Snackbar.LENGTH_SHORT).show(); //Debug message
                 PlayButton.setImageResource(android.R.drawable.ic_media_play);
                 CurrentValidAction = MediaAction.Play;
                 playbackService.pause();
