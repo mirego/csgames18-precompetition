@@ -13,7 +13,7 @@ export default class Content extends React.Component {
 
 const styles = StyleSheet.create({
   content: {
-    flex: 4,
+    flex: 5,
     backgroundColor: '#dddee2'
   },
 });
