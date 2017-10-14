@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - MCUIColorUtils (1.0.0)
+  - MCUIViewLayout (0.5.1)
+  - MRGTaylor (1.3.4)
+  - ObjectMapper (3.0.0)
+
+DEPENDENCIES:
+  - AlamofireImage
+  - MCUIColorUtils
+  - MCUIViewLayout (from `git@github.com:mirego/MCUIViewLayout.git`)
+  - MRGTaylor (from `git@github.com:mirego/taylor-ios.git`)
+  - ObjectMapper
+
+EXTERNAL SOURCES:
+  MCUIViewLayout:
+    :git: git@github.com:mirego/MCUIViewLayout.git
+  MRGTaylor:
+    :git: git@github.com:mirego/taylor-ios.git
+
+CHECKOUT OPTIONS:
+  MCUIViewLayout:
+    :commit: fa5bf12df55ae100d7dbcbf6b2d687dd781949ea
+    :git: git@github.com:mirego/MCUIViewLayout.git
+  MRGTaylor:
+    :commit: 22293cbf210d46af2c4119ecb17073fa9524c07f
+    :git: git@github.com:mirego/taylor-ios.git
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  MCUIColorUtils: 6f11e1702db4ff5419d28cba1e8f7a82dd82d5fe
+  MCUIViewLayout: 0701f55f82982eac83fa0d837a2c248fa2ce10d5
+  MRGTaylor: b46fea2c175619aa6e608d8b9983979387d618c1
+  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
+
+PODFILE CHECKSUM: 2fa24e3b09b9debb92354853de07b776154d97ae
+
+COCOAPODS: 1.3.1

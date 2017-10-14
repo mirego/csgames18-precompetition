@@ -1,0 +1,20 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+
+project 'Sherbook.xcodeproj'
+
+platform :ios, '10.0'
+
+inhibit_all_warnings!
+
+target 'Sherbook' do
+    # 3rd Party
+    pod 'ObjectMapper'
+    pod 'AlamofireImage'
+
+    # Mirego
+    pod 'MCUIViewLayout', :git => 'git@github.com:mirego/MCUIViewLayout.git'
+    pod 'MCUIColorUtils'
+    pod 'MRGTaylor', :git => 'git@github.com:mirego/taylor-ios.git'
+end
