@@ -151,7 +151,7 @@ public class HomeFragment extends Fragment {
     @OnClick(R.id.fab_new_post)
     public void onNewPostClicked(View view) {
         ((MainActivity)getActivity()).playbackService.seekTo(50000);
-        //Snackbar.make(view, "PlaybackService started", Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(view, "PlaybackService", Snackbar.LENGTH_SHORT).show();
 
         //Intent playbackIntent = new Intent(getContext(), PlaybackService.class);
         //getContext().startService(playbackIntent);

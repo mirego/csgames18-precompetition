@@ -7,6 +7,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Service;
 import android.content.pm.PackageManager;
+import android.media.MediaMetadataRetriever;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -25,6 +26,8 @@ import java.io.IOException;
 public class PlaybackService extends Service implements OnCompletionListener {
     private MediaPlayer player = null;
     private final IBinder mBinder = new LocalBinder();
+
+    private String dataSource = "/sdcard/song.mp3";
 
     @Override
     public void onCreate() {
@@ -86,8 +89,10 @@ public class PlaybackService extends Service implements OnCompletionListener {
         player.seekTo(ms);
     }
 
-    public MediaPlayer.TrackInfo[] getTrackInfo() {
-        return player.getTrackInfo();
+    public String getTrackName() {
+        MediaMetadataRetriever metadataRetriever = new MediaMetadataRetriever();
+        metadataRetriever.setDataSource(dataSource);
+        return metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
     }
 
     @Nullable
