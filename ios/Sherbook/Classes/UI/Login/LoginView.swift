@@ -13,6 +13,19 @@ protocol LoginViewDelegate: class {
     func didTapRegisterButton(username: String, password: String)
 }
 
+extension UITextField {
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    func setRightPaddingPoints(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
+}
+
 class LoginView: UIView
 {
     private let loginButton = ContinueButton()
@@ -59,6 +72,8 @@ class LoginView: UIView
         usernameField.backgroundColor = .white
         usernameField.layer.cornerRadius = 10
         usernameField.layer.masksToBounds = true
+        usernameField.setLeftPaddingPoints(10)
+        usernameField.setRightPaddingPoints(10)
         
         passwordField.placeholder = "Password"
         passwordField.font = UIFont(name: passwordField.font!.fontName, size: 25)
@@ -66,6 +81,8 @@ class LoginView: UIView
         passwordField.layer.cornerRadius = 10
         passwordField.layer.masksToBounds = true
         passwordField.isSecureTextEntry = true
+        passwordField.setLeftPaddingPoints(10)
+        passwordField.setRightPaddingPoints(10)
         
         loginButton.setPosition(.positionBottomHCenter, margins: .bottom(30))
         registerButton.setRelativePosition(.relativePositionAboveCentered, toView: loginButton, margins: .bottom(20))
