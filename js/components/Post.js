@@ -12,7 +12,6 @@ export default class Post extends React.Component {
         };
     }
     componentDidMount() {
-        console.log(this.state);
         if(this.state.attachment) {
             Image.getSize(this.state.attachment.url, (width, height) => {
                 const screenWidth = Dimensions.get('window').width;

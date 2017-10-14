@@ -14,7 +14,6 @@ export default class Content extends React.Component {
 const styles = StyleSheet.create({
   content: {
     flex: 4,
-    padding: 10,
-    backgroundColor: 'steelblue'
+    backgroundColor: 'grey'
   },
 });
