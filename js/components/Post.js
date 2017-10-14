@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
+import AutoHeightImage from 'react-native-auto-height-image';
 
 export default class Post extends React.Component {
     constructor(props){
@@ -11,24 +12,16 @@ export default class Post extends React.Component {
             attachment : props.attachment
         };
     }
-    componentDidMount() {
-        if(this.state.attachment) {
-            Image.getSize(this.state.attachment.url, (width, height) => {
-                const screenWidth = Dimensions.get('window').width;
-                const scaleFactor = width / screenWidth;
-                const imageHeight = height / scaleFactor;
-                this.state.imgWidth = screenWidth;
-                this.state.imgHeight = imageHeight;
-            })
-        }
-    }
 
     render() {
+        const showImage = this.state.attachment !== null && this.state.attachment.type === 'image';
+        const screenWidth = Dimensions.get('window').width;
+
         return (
             <View style={styles.postContainer}>
                 <Text style={styles.title}>{this.state.author}</Text>
                 <Text style={styles.message}>{this.state.message}</Text>
-                {this.state.attachment !== null && this.state.attachment.type === 'image' ? <Image resizeMode={'contain'} source={{uri:this.state.attachment.url}} style={{width: this.state.imgWidth, height: this.state.imgHeight}} /> : <Text></Text>}
+                { showImage ? <AutoHeightImage width={screenWidth} imageURL={this.state.attachment.url} /> : <Text></Text>}
             </View>
         );
     }
@@ -41,6 +34,7 @@ const styles = StyleSheet.create({
         marginBottom:8,
         paddingTop: 5,
         backgroundColor: 'white',
+        elevation: 4
     },
     title: {
         paddingLeft: 10,

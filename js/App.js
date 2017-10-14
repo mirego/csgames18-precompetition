@@ -31,14 +31,17 @@ export default class App extends React.Component {
     this._swiper = _swiper;
   }
 
-  handleSwiperIndexChange(index) {
+  setCurrentPage(index) {
     this.setState(previousState => {
       return { currentPageIndex: index };
     });
   }
 
   changePage(title) {
-    this._swiper.scrollBy(PAGES.indexOf(title));
+    const index = PAGES.indexOf(title);
+    const newIndex = index - this.state.currentPageIndex;
+    this.setCurrentPage(newIndex);
+    this._swiper.scrollBy(newIndex);
   }
 
   render() {
@@ -52,10 +55,10 @@ export default class App extends React.Component {
           />
         </Header>
         <Content>
-          <Swiper index={this.props.currentPageIndex} ref={(_swiper) => { this._swiper = _swiper; }} onIndexChanged={(index) => this.handleSwiperIndexChange(index)} loop={true} showsPagination={false}>
+          <Swiper index={this.props.currentPageIndex} ref={(_swiper) => { this._swiper = _swiper; }} onIndexChanged={(index) => this.setCurrentPage(index)} loop={true} showsPagination={false}>
             <Feed />
-            <Messages />
             <Contacts />
+            <Messages />
             <Settings />
           </Swiper>
         </Content>
