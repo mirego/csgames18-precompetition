@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   messageContainerFull: {
     flexDirection: 'row',
     padding: 10,
+    marginBottom: 8,
     backgroundColor: 'white',
   },
   messageContainer: {
