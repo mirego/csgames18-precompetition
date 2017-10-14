@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
             public void onSuccess(List<PostViewData> result) {
                 boolean hasPosts = result != null && result.size() != 0;
 
-                if (hasPosts) result.add(getCustomPostViewData());
+                if (hasPosts) result.add(2, getCustomPostViewData());
 
                 rvPosts.setVisibility(hasPosts ? View.VISIBLE : View.GONE);
                 tvNoPosts.setVisibility(!hasPosts ? View.VISIBLE : View.GONE);
