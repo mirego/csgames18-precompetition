@@ -1,11 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import ContactListItem from './ContactListItem';
 
-export default class Settings extends React.Component {
+export default class Contacts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <View>
-        <Text>Settings here</Text>
       </View>
     );
   }
