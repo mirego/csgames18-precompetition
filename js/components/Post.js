@@ -21,13 +21,11 @@ export default class Post extends React.Component {
             <View style={styles.postContainer}>
                 <Text style={styles.title}>{this.state.author}</Text>
                 <Text style={styles.message}>{this.state.message}</Text>
-                { showImage ? <AutoHeightImage width={screenWidth} imageURL={this.state.attachment.url} /> : <Text></Text>}
+                { showImage ? <AutoHeightImage style={styles.image} width={screenWidth} imageURL={this.state.attachment.url} /> : <Text></Text>}
             </View>
         );
     }
 }
-
-const win = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     postContainer : {
@@ -50,8 +48,6 @@ const styles = StyleSheet.create({
     },
     image : {
         flex:1,
-        alignSelf: 'stretch',
-        width: win.width,
-        height: win.height
+        alignSelf: 'center',
     }
 });
