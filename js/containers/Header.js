@@ -14,7 +14,6 @@ export default class Header extends React.Component {
 const styles = StyleSheet.create({
   header: {
     flex: 1,
-    padding: 10,
     paddingTop: 30,
     backgroundColor: 'powderblue'
   },
