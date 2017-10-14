@@ -1,12 +1,22 @@
 package com.mirego.sherbook.views;
 
+import android.Manifest;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +26,7 @@ import com.mirego.sherbook.R;
 import com.mirego.sherbook.SherbookApplication;
 import com.mirego.sherbook.adapters.PostAdapter;
 import com.mirego.sherbook.controllers.FeedController;
+import com.mirego.sherbook.services.PlaybackService;
 import com.mirego.sherbook.models.Post;
 import com.mirego.sherbook.viewdatas.PostViewData;
 
@@ -139,6 +150,11 @@ public class HomeFragment extends Fragment {
 
     @OnClick(R.id.fab_new_post)
     public void onNewPostClicked(View view) {
-        Snackbar.make(view, R.string.not_implemented_yet, Snackbar.LENGTH_SHORT).show();
+        ((MainActivity)getActivity()).playbackService.seekTo(50000);
+        //Snackbar.make(view, "PlaybackService started", Snackbar.LENGTH_SHORT).show();
+
+        //Intent playbackIntent = new Intent(getContext(), PlaybackService.class);
+        //getContext().startService(playbackIntent);
+        //playbackService.bindService(playbackIntent, mConnection, Context.BIND_AUTO_CREATE);
     }
 }
