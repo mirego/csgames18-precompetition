@@ -1,5 +1,7 @@
 package com.mirego.sherbook.models;
 
+import android.support.annotation.Nullable;
+
 import java.util.Date;
 
 public class Post {
@@ -31,6 +33,7 @@ public class Post {
     private String author;
     private String message;
     private Attachment attachment;
+    private Integer rating;
 
     public String getId() {
         return id;
@@ -71,5 +74,14 @@ public class Post {
     public void setAttachment(Attachment attachment) {
         this.attachment = attachment;
     }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
+    public Integer getRating() {
+        return this.rating;
+    }
+
 
 }

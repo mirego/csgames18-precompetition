@@ -1,6 +1,7 @@
 package com.mirego.sherbook.viewdatas;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 
 import com.mirego.sherbook.models.Post;
 
@@ -22,12 +23,34 @@ public class PostViewData {
         return post.getMessage();
     }
 
+
     public String imageUrl() {
         if (post.getAttachment() != null) {
             if (post.getAttachment().getUrl() != null) {
-                return post.getAttachment().getUrl();
+                if(post.getAttachment().getType().equals("image")) {
+                    return post.getAttachment().getUrl();
+                }
             }
         }
         return null;
+    }
+
+    public String videoUrl() {
+        if(post.getAttachment() != null) {
+            if(post.getAttachment().getUrl() != null) {
+                if(post.getAttachment().getType().equals("video")) {
+                    return post.getAttachment().getUrl();
+                }
+            }
+        }
+        return null;
+    }
+
+    public String id() {
+        return post.getId();
+    }
+
+    public Integer rating() {
+        return post.getRating();
     }
 }

@@ -1,21 +1,32 @@
 package com.mirego.sherbook.adapters;
 
 import android.content.Context;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 import com.mirego.sherbook.R;
+import com.mirego.sherbook.models.Post;
 import com.mirego.sherbook.viewdatas.PostViewData;
+import com.mirego.sherbook.views.HomeFragment;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
@@ -48,6 +59,21 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
             Glide.with(context).load(postViewData.imageUrl()).into(holder.ivPhoto);
             holder.ivPhoto.setVisibility(postViewData.imageUrl() != null ? View.VISIBLE : View.GONE);
+
+            String uri = postViewData.videoUrl();
+
+            if(uri != null) {
+                holder.vvVideo.setVideoURI(Uri.parse(uri));
+                holder.vvVideo.start();
+                holder.vvVideo.setVisibility(View.VISIBLE);
+            } else {
+                holder.vvVideo.setVisibility(View.GONE);
+            }
+
+            holder.id.setText(postViewData.id());
+
+            //holder.rbRating.setRating(postViewData.rating());
+
         }
     }
 
@@ -75,9 +101,33 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         @BindView(R.id.iv_photo)
         ImageView ivPhoto;
 
+        @BindView(R.id.vv_video)
+        VideoView vvVideo;
+
+        @BindView(R.id.rb_rating)
+        RatingBar rbRating;
+
+        @BindView(R.id.tv_id)
+        TextView id;
+
+
+
         public PostViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            addListenerOnRatingBar();
+        }
+
+        public void addListenerOnRatingBar() {
+
+            //if rating value is changed,
+            //display the current rating value in the result (textview) automatically
+            rbRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                public void onRatingChanged(RatingBar ratingBar, float rating,
+                                            boolean fromUser) {
+                    rbRating.setRating(rating);
+                }
+            });
         }
 
     }
