@@ -7,6 +7,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Service;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.content.Intent;
@@ -26,10 +27,11 @@ public class PlaybackService extends Service implements OnCompletionListener {
     @Override
     public void onCreate() {
         player = new MediaPlayer();
+        player.setAudioStreamType(AudioManager.STREAM_MUSIC);
         player.setOnCompletionListener(this);
         try {
-            //player.setDataSource(Environment.getExternalStorageDirectory().getPath() + "/song.mp3");
-            player.setDataSource("/sdcard/song.mp3");
+            //player.setDataSource(android.os.Environment.getExternalStorageDirectory().getPath() + "/song.mp3");
+            player.setDataSource("/storage/86EE-1308/song.mp3");
             player.prepare();
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,7 +40,7 @@ public class PlaybackService extends Service implements OnCompletionListener {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        player.start();
+        // player.start();
         Log.d("TagServiceStart", "Playback service started.");
         return Service.START_NOT_STICKY;
     }
@@ -63,6 +65,8 @@ public class PlaybackService extends Service implements OnCompletionListener {
     public void start() {
         player.start();
     }
+
+    public void pause() { player.pause(); }
 
     public boolean isPlaying() {
         return player.isPlaying();

@@ -12,6 +12,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.mirego.sherbook.R;
+import com.mirego.sherbook.services.PlaybackService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +28,7 @@ public class MediaControlFragment extends Fragment {
         Pause,
     }
 
+    PlaybackService playbackService;
     MediaAction CurrentValidAction = MediaAction.Play;
 
     @BindView(R.id.media_control_seekbar)
@@ -55,6 +57,8 @@ public class MediaControlFragment extends Fragment {
 
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         progressChangedValue = progress;
+        //int mediaTime = playbackService.getDuration() * (progress/seekBar.getMax());
+        //playbackService.seekTo(mediaTime);
     }
 
     public void onStopTrackingTouch(SeekBar seekBar) {
@@ -70,6 +74,7 @@ public class MediaControlFragment extends Fragment {
     }
 
     public void setMediaTime(int currentTime, int maxTime) {
+        // Display
         Time.setText(String.format("%02d:%02d / %02d:%02d", currentTime/60,currentTime%60,maxTime/60,maxTime%60));
     }
 
@@ -78,14 +83,25 @@ public class MediaControlFragment extends Fragment {
         switch (CurrentValidAction)
         {
             case Play:
-                Snackbar.make(view, "Play", Snackbar.LENGTH_SHORT).show();
+                if(playbackService == null)
+                {
+                    playbackService = ((MainActivity)getActivity()).playbackService;
+                }
+                //Snackbar.make(view, "Play", Snackbar.LENGTH_SHORT).show();
                 PlayButton.setImageResource(android.R.drawable.ic_media_pause);
                 CurrentValidAction = MediaAction.Pause;
+                playbackService.start();
+                setMediaTime(playbackService.getCurrentPosition()/1000,playbackService.getDuration()/1000);
                 break;
             case Pause:
-                Snackbar.make(view, "Pause", Snackbar.LENGTH_SHORT).show();
+                if(playbackService == null)
+                {
+                    playbackService = ((MainActivity)getActivity()).playbackService;
+                }
+                //Snackbar.make(view, "Pause", Snackbar.LENGTH_SHORT).show();
                 PlayButton.setImageResource(android.R.drawable.ic_media_play);
                 CurrentValidAction = MediaAction.Play;
+                playbackService.pause();
                 break;
         }
     }
