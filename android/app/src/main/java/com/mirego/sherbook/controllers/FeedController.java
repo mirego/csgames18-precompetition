@@ -4,7 +4,9 @@ import android.content.Context;
 
 import com.mirego.sherbook.models.Feed;
 import com.mirego.sherbook.models.Post;
+import com.mirego.sherbook.models.PostFriend;
 import com.mirego.sherbook.services.FeedService;
+import com.mirego.sherbook.viewdatas.FriendViewData;
 import com.mirego.sherbook.viewdatas.PostViewData;
 
 import java.util.ArrayList;
@@ -38,6 +40,29 @@ public class FeedController {
                     List<PostViewData> postViewDatas = new ArrayList<>();
                     for (Post post : feed.getPosts()) {
                         postViewDatas.add(new PostViewData(post, context));
+                    }
+                    postsRequestCallback.onSuccess(postViewDatas);
+                } else {
+                    postsRequestCallback.onError();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Feed> call, Throwable t) {
+                postsRequestCallback.onError();
+            }
+        });
+    }
+
+    public void getFriendPosts(final RequestCallback<List<FriendViewData>> postsRequestCallback) {
+        feedService.getFeed().enqueue(new Callback<Feed>() {
+            @Override
+            public void onResponse(Call<Feed> call, Response<Feed> response) {
+                Feed feed = response.body();
+                if (feed != null && feed.getFriendPosts() != null) {
+                    List<FriendViewData> postViewDatas = new ArrayList<>();
+                    for (PostFriend post : feed.getFriendPosts()) {
+                        postViewDatas.add(new FriendViewData(post, context));
                     }
                     postsRequestCallback.onSuccess(postViewDatas);
                 } else {

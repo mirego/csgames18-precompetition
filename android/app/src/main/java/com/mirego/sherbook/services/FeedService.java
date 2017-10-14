@@ -7,7 +7,9 @@ import retrofit2.http.GET;
 
 public interface FeedService {
 
-    @GET("sherbook.json")
-    Call<Feed> getFeed();
+   //@GET("sherbook.json")
+   //Call<Feed> getFeed();
 
+    @GET("find/:query")
+    Call<Feed> getFeed();
 }

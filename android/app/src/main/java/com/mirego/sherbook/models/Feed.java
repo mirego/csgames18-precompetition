@@ -8,6 +8,8 @@ public class Feed {
     private Date lastUpdate;
     private List<Post> posts = null;
 
+    private List<PostFriend> friendsPosts = null;
+
     public String getFeed() {
         return feed;
     }
@@ -28,7 +30,16 @@ public class Feed {
         return posts;
     }
 
+    public List<PostFriend> getFriendPosts() {
+        return friendsPosts;
+    }
+
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
+
+    public void setFriendPosts(List<PostFriend> posts) {
+        this.friendsPosts = posts;
+    }
+
 }

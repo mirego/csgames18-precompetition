@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private void configureTabLayout() {
         tabData = Arrays.asList(
                 new TabDescriptor(HomeFragment.class, R.string.section_home, R.drawable.icn_home),
-                new TabDescriptor(EmptyFragment.class, R.string.section_friends, R.drawable.icn_friends),
+                new TabDescriptor(FriendsFragment.class, R.string.section_friends, R.drawable.icn_friends),
                 new TabDescriptor(EmptyFragment.class, R.string.section_messages, R.drawable.icn_messages),
                 new TabDescriptor(EmptyFragment.class, R.string.section_settings, R.drawable.icn_settings)
         );
