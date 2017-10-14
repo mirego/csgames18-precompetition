@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.tintColor = .emerald
         window?.rootViewController = TabBarViewController(tabsViewControllers:
             [UINavigationController(rootViewController: HomeViewController(homeController: HomeControllerImpl())),
-             UINavigationController(rootViewController: NotImplementedViewController(title: "Friends")),
+             UINavigationController(rootViewController: FriendsController()),
              UINavigationController(rootViewController: NotImplementedViewController(title: "Messages")),
-             UINavigationController(rootViewController: NotImplementedViewController(title: "Settings"))])
+             UINavigationController(rootViewController: SettingsViewController(title: "Réglages"))])
         window?.makeKeyAndVisible()
 
         return true

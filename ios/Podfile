@@ -17,4 +17,5 @@ target 'Sherbook' do
     pod 'MCUIViewLayout', :git => 'git@github.com:mirego/MCUIViewLayout.git'
     pod 'MCUIColorUtils'
     pod 'MRGTaylor', :git => 'git@github.com:mirego/taylor-ios.git'
+    pod 'PureLayout', '~> 2.0.5'
 end

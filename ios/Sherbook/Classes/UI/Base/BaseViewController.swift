@@ -21,8 +21,8 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .emerald
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = false
-        //navigationController?.navigationBar.shadowImage = UIImage()
-        //navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.foregroundColor: UIColor.white,
