@@ -84,7 +84,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return posts.size();
     }
 
-    public static class PostViewHolder extends RecyclerView.ViewHolder {
+    public static class PostViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         PlaybackService playbackService;
 
@@ -113,15 +113,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             super(itemView);
             ButterKnife.bind(this, itemView);
 
-            playButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // This is the place we will be able to start the audio player UI
-                    Toast.makeText(v.getContext(),
-                            "I will start audio playing here",
-                            Toast.LENGTH_LONG).show();
-                }
-            });
+            playButton.setOnClickListener(this);
         }
 
         public void SetDuration(int duration){
@@ -133,6 +125,17 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             tvPodcastViewName.setText(title);
         }
 
+        @Override
+        public void onClick(View v) {
+            // This is the place we will be able to start the audio player UI
+           // Toast.makeText(v.getContext(),
+                  //  "I will start audio playing here",
+                   // Toast.LENGTH_LONG).show();
+            if (playbackService != null)
+            {
+                playbackService.start();
+            }
+        }
     }
 
 }
