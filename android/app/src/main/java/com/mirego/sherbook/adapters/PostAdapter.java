@@ -62,9 +62,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
             if (playbackService != null)
             {
+                holder.playbackService = playbackService;
                 holder.podcastHolder.setVisibility(postViewData.IsAudio() ? View.VISIBLE : View.GONE);
                 holder.SetDuration(playbackService.getDuration());
-                holder.SetTitle("Somthing something");
+                holder.SetTitle(playbackService.getTrackName());
             }
 
         }
@@ -84,6 +85,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     }
 
     public static class PostViewHolder extends RecyclerView.ViewHolder {
+
+        PlaybackService playbackService;
 
         @BindView(R.id.tv_author)
         TextView tvAuthor;
@@ -122,7 +125,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         }
 
         public void SetDuration(int duration){
-            tvPodcastViewDuration.setText(String.format("%02d:%02d", duration / 60000, duration % 60000));
+            duration = duration / 1000;
+            tvPodcastViewDuration.setText(String.format("%02d:%02d", duration / 60, duration % 60));
         }
 
         public void SetTitle(String title){

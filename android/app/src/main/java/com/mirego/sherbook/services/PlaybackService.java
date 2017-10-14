@@ -12,6 +12,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
@@ -27,10 +28,11 @@ public class PlaybackService extends Service implements OnCompletionListener {
     private MediaPlayer player = null;
     private final IBinder mBinder = new LocalBinder();
 
-    private String dataSource = "/sdcard/song.mp3";
+    private Uri dataSource =  Uri.parse("android.resource://com.mirego.sherbook/" + R.raw.song);
 
     @Override
     public void onCreate() {
+
         player = MediaPlayer.create(this, R.raw.song);
        // player.setAudioStreamType(AudioManager.STREAM_MUSIC);
         player.setOnCompletionListener(this);
@@ -91,7 +93,7 @@ public class PlaybackService extends Service implements OnCompletionListener {
 
     public String getTrackName() {
         MediaMetadataRetriever metadataRetriever = new MediaMetadataRetriever();
-        metadataRetriever.setDataSource(dataSource);
+        metadataRetriever.setDataSource(getApplicationContext(),dataSource);
         return metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
     }
 
