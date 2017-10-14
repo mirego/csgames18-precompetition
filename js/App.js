@@ -4,8 +4,16 @@ import Swiper from 'react-native-swiper';
 
 import Header from './containers/Header';
 import Content from './containers/Content';
-import NavMenu from './components/NavMenu';
+import NavMenu from './containers/NavMenu';
 import Feed from './components/Feed';
+
+const PAGES = [
+  'Home',
+  'Friends',
+  'Messages',
+  'Settings'
+]
+
 import Messages from './components/Messages';
 import Contacts from './components/Contacts';
 import Settings from './components/Settings';
@@ -14,7 +22,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      "selectedTabIndex": 0
+      currentPageIndex: 0,
     };
     this._swiper = null;
   }
@@ -24,22 +32,27 @@ export default class App extends React.Component {
   }
 
   handleSwiperIndexChange(index) {
-    // TODO: handle index change
-    console.log(this._swiper != null);
+    this.setState(previousState => {
+      return { currentPageIndex: index };
+    });
+  }
+
+  changePage(title) {
+    this._swiper.scrollBy(PAGES.indexOf(title));
   }
 
   render() {
     return (
       <View style={ styles.container }>
         <Header>
-          <NavMenu />
+          <NavMenu
+            pages={PAGES}
+            current={PAGES[this.state.currentPageIndex]}
+            onPageSelected={(title) => this.changePage(title)}
+          />
         </Header>
-        <Button
-          onPress={() => { this._swiper.scrollBy(2) }}
-          title="Press Me"
-        />
         <Content>
-          <Swiper ref={(_swiper) => { this._swiper = _swiper; }} onIndexChanged={this.handleSwiperIndexChange} loop={true} showsPagination={false}>
+          <Swiper index={this.props.currentPageIndex} ref={(_swiper) => { this._swiper = _swiper; }} onIndexChanged={(index) => this.handleSwiperIndexChange(index)} loop={true} showsPagination={false}>
             <Feed />
             <Messages />
             <Contacts />
