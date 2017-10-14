@@ -17,11 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.tintColor = .emerald
-        window?.rootViewController = TabBarViewController(tabsViewControllers:
-            [UINavigationController(rootViewController: HomeViewController(homeController: HomeControllerImpl())),
-             UINavigationController(rootViewController: NotImplementedViewController(title: "Friends")),
-             UINavigationController(rootViewController: NotImplementedViewController(title: "Messages")),
-             UINavigationController(rootViewController: NotImplementedViewController(title: "Settings"))])
+        window?.rootViewController = LoginViewController(loginController: LoginControllerImpl())
         window?.makeKeyAndVisible()
 
         return true
