@@ -16,7 +16,7 @@ export default class NavList extends React.Component {
 
     return(
       <TouchableHighlight
-        underlayColor="powderblue"
+        underlayColor="white"
         onPress={() => this.props.onPageSelected(title)}
         key={title}
         style={style}
@@ -39,14 +39,15 @@ styles = StyleSheet.create({
   pageButton: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderBottomColor: 'white',
+    borderBottomWidth: 2
   },
   pageButtonSelected: {
     flex: 1,
-    backgroundColor: 'steelblue',
     justifyContent: 'center',
     alignItems: 'center',
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5
+    borderBottomColor: '#00743b',
+    borderBottomWidth: 2
   }
 });

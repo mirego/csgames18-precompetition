@@ -14,7 +14,7 @@ export default class NavMenu extends React.Component {
       <View style={{flex: 1}}>
         <View style={styles.currentPage}>
             <View style={{flexDirection: 'row'}}>
-              <Text style={styles.currentPageButton}>Home</Text>
+              <Text style={[styles.currentPageButton, styles.text]}>Home</Text>
               <View style={styles.currentPageButton}></View>
             </View>
         </View>
@@ -41,6 +41,11 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   navBar: {
-    flex: 2
+    flex: 2,
+    backgroundColor: 'white',
   },
+  text: {
+    color: '#FFFFFF',
+    fontSize: 30
+  }
 });

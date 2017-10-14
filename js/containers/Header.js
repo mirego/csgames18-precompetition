@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     paddingTop: 30,
-    backgroundColor: 'powderblue'
+    backgroundColor: '#00743b',
+    elevation: 4
   },
 });
