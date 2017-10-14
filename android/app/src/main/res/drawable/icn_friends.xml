@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="26dp"
+    android:height="25dp"
+    android:viewportWidth="26"
+    android:viewportHeight="25">
+
+    <group
+            android:translateX="1">
+        <path
+            android:fillColor="#A2A2A2"
+            android:pathData="M 18.305 0 C 19.901102927 0 21.195 1.29389707299 21.195 2.89 C 21.195 4.48610292701 19.901102927 5.78 18.305 5.78 C 16.708897073 5.78 15.415 4.48610292701 15.415 2.89 C 15.415 1.29389707299 16.708897073 0 18.305 0 Z" />
+        <path
+            android:fillType="evenOdd"
+            android:strokeColor="#A2A2A2"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeLineCap="round"
+            android:pathData="M11.56 14.451l2.559-1.927 1.701-2.902c.345-.59 .978 -.951 1.662-.951h2.209c.884
+0 1.655 .602 1.87 1.46l1.56 6.247" />
+        <path
+            android:fillColor="#A2A2A2"
+            android:pathData="M 4.817 0 C 6.41310292701 0 7.707 1.29389707299 7.707 2.89 C 7.707 4.48610292701 6.41310292701 5.78 4.817 5.78 C 3.22089707299 5.78 1.927 4.48610292701 1.927 2.89 C 1.927 1.29389707299 3.22089707299 0 4.817 0 Z" />
+        <path
+            android:fillColor="#A2A2A2"
+            android:pathData="M15.414 10.597V23.09a.996 .996 0 1 0 1.988 .066 l.423-6.33a.481 .481 0 0 1 .96
+.001 l.421 6.33a.996 .996 0 0 0 1.988-.066V10.596a2.89 2.89 0 1 0-5.78 0z" />
+        <path
+            android:fillType="evenOdd"
+            android:strokeColor="#A2A2A2"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeLineCap="round"
+            android:pathData="M11.56 14.451l-2.557-1.927-1.701-2.902a1.925 1.925 0 0 0-1.662-.951H3.432c-.885
+0-1.655 .602 -1.87 1.46L0 16.377" />
+        <path
+            android:fillColor="#A2A2A2"
+            android:pathData="M7.707 10.597V23.09a.996 .996 0 1 1-1.988 .066 l-.422-6.33a.481 .481 0 0 0-.96
+.001 l-.422 6.33a.996 .996 0 0 1-1.988-.066V10.596a2.89 2.89 0 1 1 5.78 0z" />
+    </group>
+</vector>
