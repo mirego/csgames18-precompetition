@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         marginBottom:8,
         paddingTop: 5,
         backgroundColor: 'white',
+        elevation: 4
     },
     title: {
         paddingLeft: 10,
